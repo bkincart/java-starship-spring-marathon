@@ -1,0 +1,16 @@
+<html th:replace="~{fragments/layout :: layout(~{::body})}">
+  <body>
+    <div th:object="${starship}">
+      <h2 class="blue-header" th:text="*{name}"></h2>
+      <h2 class="description" th:text="*{description}"></h2>
+      <h2 th:text="*{fuelCapacity} + ' Teraliters'"></h2>
+      <p th:text="*{fuelCapacity gt 700}? 'HIGH' : (*{fuelCapacity lt 300}? 'LOW' : 'AVERAGE')"></p>
+<!--      <p th:text="*{fuelCapacity gt 700}? 'HIGH' : (*{fuelCapacity gt 300}? 'AVERAGE' : 'LOW')"></p>-->
+<!--      <h2 th:if="*{fuelCapacity gt 700}">HIGH</h2>-->
+<!--      <h2 th:if="*{fuelCapacity lt 700 and fuelCapacity gt 300}">AVERAGE</h2>-->
+<!--      <h2 th:if="*{fuelCapacity lt 300}">LOW</h2>-->
+    </div>
+
+    <a href="/starships">Go Back to All Starships</a>
+  </body>
+</html>

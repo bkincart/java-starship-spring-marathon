@@ -1,0 +1,19 @@
+<html th:replace="~{fragments/layout :: layout(~{::body})}">
+
+<body>
+  <h1 class="blue-header">Starships</h1>
+
+  <ul>
+    <div>
+      <!--    <li th:text="${starship.name}"></li>-->
+<!--      <li><a th:href="@{starships/{id}(id=*{id})}"><span th:text="*{name}"></span> (Fuel capacity: <span th:text="*{fuelCapacity}"></span>)</a></li>-->
+      <li th:each="starship : ${starships}" th:object="${starship}">
+        <a th:href="'/starships/' + *{id}" th:text="*{name} + ' (Fuel capacity: ' + *{fuelCapacity} + ')'"></a>
+      </li>
+    </div>
+  </ul>
+</body>
+
+
+
+</html>

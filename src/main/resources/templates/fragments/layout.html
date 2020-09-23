@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html th:fragment="layout (template)">
+  <head>
+    <title>Java Marathon</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <th:block th:include="${template}"/>
+  </body>
+</html>

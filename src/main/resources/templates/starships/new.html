@@ -1,0 +1,26 @@
+<html th:replace="~{fragments/layout :: layout (~{::body})}">
+<body>
+
+<h1 class="blue-header">Add a New SpaceShip</h1>
+<form action="#" th:action="@{/starships}" th:object="${starShip}" method="POST">
+  <div>
+    <label th:for="name">Name</label>
+    <input type="text" th:field="*{name}" />
+  </div>
+
+  <div>
+    <label th:for="description">Description</label>
+    <input type="text" th:field="*{description}" />
+  </div>
+
+  <div>
+    <label th:for="fuelCapacity">Fuel Capacity</label>
+    <input type="number" th:field="*{fuelCapacity}" />
+  </div>
+  <div>
+    <input type="submit" value="Add new Space Ship" />
+  </div>
+</form>
+</body>
+
+</html>
